@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import BookingPlaced from "./pages/BookingPlaced";
+import Checkout from "./pages/Checkout";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main
+      style={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#f5f5f5",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "#ffffff",
+          width: "375px",
+          height: "780px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
+        <Routes>
+          <Route path="/" element={<Checkout />} />
+          <Route path="/booking-placed" element={<BookingPlaced />} />
+        </Routes>
+      </div>
+    </main>
   );
 }
-
-export default App;
